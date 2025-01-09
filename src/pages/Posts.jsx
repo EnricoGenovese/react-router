@@ -7,7 +7,36 @@ const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000"
 const postsEndPoint = "/posts";
 
 export default function Posts() {
+    const [posts, setPosts] = useState([]);
 
+    useEffect(() => {
+        getData()
+    }, []);
 
-    return ()
+    function getData() {
+        axios.get(`${apiUrl}${postsEndPoint}`)
+            .then((res) => {
+                setPosts(res.data.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+            .finally(() => {
+                console.log("API called");
+            })
+    }
+    return (
+        <section className="container py-3">
+            <div className="row gy-4">
+                {posts.map((post) => (
+                    <div className="col-12 col-md-6 col-lg-4"
+                        key={post.id}>
+                        <Card data={post} />
+                    </div>
+                ))
+
+                }
+            </div>
+        </section>
+    )
 }
