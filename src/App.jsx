@@ -1,9 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import DefaultLayout from './layouts/DefaultLayout'
-import HomePage from './pages/HomePage'
-import AboutUs from './pages/AboutUs'
-import Posts from './pages/Posts'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import DefaultLayout from './layouts/DefaultLayout';
+import HomePage from './pages/HomePage';
+import AboutUs from './pages/AboutUs';
+import Posts from './pages/Posts';
+import Post from './pages/Post';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
             <Route path='/about' Component={AboutUs} />
             <Route path='/posts'>
               <Route index Component={Posts} />
+              <Route path=':id' Component={Post} />
             </Route>
           </Route>
         </Routes>
@@ -24,4 +26,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

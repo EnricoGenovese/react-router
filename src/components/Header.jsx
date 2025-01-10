@@ -1,6 +1,21 @@
 import { NavLink } from "react-router-dom";
 
+const navMenu = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About Us" },
+    { path: "/posts", label: "Posts" }
+]
+
 export default function Header() {
+
+    function drawNavbar() {
+        return navMenu.map((item) => (
+            <li key={item.label}>
+                <NavLink to={item.path} className="nav-link">{item.label}</NavLink>
+            </li>
+
+        ))
+    }
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -10,15 +25,7 @@ export default function Header() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <NavLink className="navbar-brand" to="/">Home</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="navbar-brand" to="/about">About us</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="navbar-brand" to="/posts">Posts</NavLink>
-                        </li>
+                        {drawNavbar()}
                     </ul>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
