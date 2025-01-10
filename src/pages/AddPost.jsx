@@ -37,7 +37,7 @@ export default function AddPost() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        // newId = formData.reduce((curr, next) => curr.id < next.id ? next : curr).id + 1
+
         axios.post(apiUrl + postsEndPoint, formData)
             .then((res) => {
                 console.log(res.data);

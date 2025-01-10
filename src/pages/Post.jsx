@@ -12,8 +12,9 @@ export default function Post() {
     useEffect(getData, [id]);
 
     function getData() {
-        axios.get(apiUrl + endPoint + id)
+        axios.get(`${apiUrl}${endPoint}${id}`)
             .then((res) => {
+                console.log(res.data)
                 setPost(res.data.post);
             })
             .catch((error) => {

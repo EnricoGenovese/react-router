@@ -16,6 +16,7 @@ export default function Posts() {
     function getData() {
         axios.get(`${apiUrl}${postsEndPoint}`)
             .then((res) => {
+                console.log(res.data);
                 setPosts(res.data.data);
             })
             .catch((error) => {
