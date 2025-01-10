@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import AboutUs from './pages/AboutUs';
 import Posts from './pages/Posts';
 import Post from './pages/Post';
+import AddPost from './pages/AddPost';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
               <Route index Component={Posts} />
               <Route path=':id' Component={Post} />
             </Route>
+            <Route path="/create" Component={AddPost} />
           </Route>
         </Routes>
       </BrowserRouter>

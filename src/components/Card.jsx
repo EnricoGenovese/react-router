@@ -9,7 +9,7 @@ export default function Card({ data, onDelete }) {
             <div className="card-body">
                 <h5 className="card-title">{data.title}</h5>
                 <p className="card-text text-truncate">{data.content}</p>
-                <p className="card-text text-truncate">{data.tags.join(", ")}</p>
+                <p className="card-text text-truncate">{data.tags}</p>
                 <Link to={`/posts/${data.id}`} className="btn btn-primary">Dettagli</Link>
                 <button key={data.id}
                     onClick={onDelete}

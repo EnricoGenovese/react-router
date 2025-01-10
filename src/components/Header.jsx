@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 const navMenu = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About Us" },
-    { path: "/posts", label: "Posts" }
+    { path: "/posts", label: "Posts" },
+    { path: "/create", label: "Add Post" },
 ]
 
 export default function Header() {
